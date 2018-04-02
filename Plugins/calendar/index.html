@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+   <section id="calendar">
+       <header class="date-header">
+           <i v-on:click = "prev"></i>
+           <span>{{dateTime}}</span>
+           <i v-on:click = "next"></i>
+       </header>
+       <section class="date-content">
+            <header class="day-header">
+                <ul>
+                    <li v-for = "item in days">{{item}}</li>
+                </ul>
+            </header>
+            <section class="day-content">
+                <ul v-for = "(item,index) in date">
+                    <li v-for = "item1 in item" v-on:click = "if(index == 1){ toDate(event) }" 
+                        :class = "index == 1 && current == item1 && currentClass">{{item1}}<span v-if = "index == 1 && today == item1"></span>
+                    </li>
+                </ul>
+            </section>
+       </section>
+   </section>
+<script src="../node_modules/vue/dist/vue.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+body,div,section,header,footer,ul,li,i{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+#calendar{
+    width:502px;
+    height:522px;
+    margin:0  auto;
+}
+.date-header{
+    width:100%;
+    height:48px;
+    background-color:#363636;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.date-header i {cursor:pointer;}
+.date-header span{
+    color:#fff;
+    text-align: center;
+    flex-basis: 80%;
+}
+.date-content{
+    width:494px;
+    height:472px;
+    border-left:2px solid #cdcdcd;
+    border-right:2px solid #cdcdcd;
+    border-bottom:2px solid #cdcdcd;
+    background-color:#f6f6f6;
+    overflow:hidden;
+    padding-left: 2.5px;
+    padding-right:1.5px;
+}
+.day-header{
+    width:100%;
+    height:53px;
+    line-height:53px;
+}
+.date-header i:first-child{
+    border-right:22px solid #ffffff;
+    border-top:12px solid rgba(255,255,255,0);
+    border-bottom:12px solid rgba(255,255,255,0);
+    display: inline-block;
+}
+.date-header i:last-child{
+    border-left:22px solid #ffffff;
+    border-top:12px solid rgba(255,255,255,0);
+    border-bottom:12px solid rgba(255,255,255,0);
+    display: inline-block;
+}
+.day-header ul li{
+    display: inline-block;
+    width:66px;
+    text-align:center;
+    margin-left:2.5px;
+    margin-right:2px;
+}
+.day-content ul{display:inline;}
+.day-content ul:first-child li,.day-content ul:last-child li {
+    color:#b4b3b3;
+}
+.day-content ul li{
+    display: inline-block;
+    width:60px;
+    height:60px;
+    border:2px solid #fcfcfc;
+    outline: 2px solid #cacaca;
+    margin-left:2px;
+    margin-right:4.5px;
+    margin-bottom:6px;
+    text-align:center;
+    line-height:60px;
+    font-size:24px;
+    color:#666666;
+    cursor:pointer;
+    position: relative;
+}
+.day-content ul li.current{
+    background-color:#c6c6c6;
+    border:2px solid #c6c6c6;
+}
+.day-content ul:nth-child(2) li:hover{
+    background:#c6c6c6;
+    border:2px solid #c6c6c6;
+}
+
+.day-content ul li span{
+    display: block;
+    position: absolute;
+    top:-7px;
+    left:-17px;
+    border-bottom:22px solid #e10606;
+    border-right:21px solid rgba(255,255,255,0);
+    border-left:21px solid rgba(255,255,255,0);
+    transform: rotate(-45deg);
+}
