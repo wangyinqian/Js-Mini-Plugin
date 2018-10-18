@@ -1,0 +1,54 @@
+html,body,div,ul,li,p{margin:0;padding:0;}
+li{list-style:none;}
+body{
+    background:green;
+}
+#gobang{
+    width:530px;
+    height:530px;
+    margin:0 auto;
+    background-color:#d8b69b;
+    overflow:hidden;
+    cursor: pointer;
+    /* background-image: url("../image/timg.jpg") */
+}
+#gobang .gobang-content{
+    width:490px;
+    height:490px;
+    margin:20px auto;
+    border:1px solid #000000;
+}
+.gobang-row{
+    width:100%;
+    height:calc(100% / 14);
+    border-bottom:1px solid #000000;
+    box-sizing: border-box;
+}
+.gobang-row:last-child{
+    border-bottom: 0px;
+}
+.gobang-column{
+    width:calc(100% / 14);
+    height:100%;
+    border-right:1px solid #000000;
+    display:inline-block;
+    box-sizing: border-box;
+    position: relative;
+}
+.gobang-column:last-child{border-right:0px;}
+.gobang-column>p {
+    width:6px;
+    height:6px;
+    border-radius: 6px;
+    background:#000000;
+    position: absolute;
+    bottom:-3px;
+    right:-3px;
+}
+.gobang-black,.gobang-white{
+    width:25px;
+    height:25px;
+    border-radius: 25px;
+}
+.gobang-black{ background:#000000; }
+.gobang-white{ background:#ffffff; }
