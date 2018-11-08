@@ -46,9 +46,12 @@ body{
     right:-3px;
 }
 .gobang-black,.gobang-white{
-    width:25px;
-    height:25px;
-    border-radius: 25px;
+    width:26px;
+    height:26px;
+    border-radius: 26px;
+    position: absolute;
+    top:-13px;
+    left:-13px
 }
 .gobang-black{ background:#000000; }
 .gobang-white{ background:#ffffff; }
