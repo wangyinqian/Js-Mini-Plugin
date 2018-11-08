@@ -149,7 +149,7 @@
             }
         }
         end(current){
-            alert(current.type + "赢了")
+           setTimeout(()=>alert(current.type + "赢了"),0) 
         }
     }
     
