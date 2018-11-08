@@ -10,52 +10,57 @@
 <body>
     <div id = "gobang">
         <div class = "gobang-content">
-            <ul class = "gobang-row">
-                <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+            <ul class = "gobang-row"  v-for = "row in rows">
+                <li class ="gobang-column" v-on:click = "created" v-for = "col in row">
+                    <p v-if = "col.solid"></p>
+                    <div v-if = "col.type" :class = "'gobang-' + col.type"></div> 
+                </li>
             </ul>
-            <ul class = "gobang-row">
-                    <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
-            <ul class = "gobang-row">
-                    <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"><p></p></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"><p></p></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
-            <ul class = "gobang-row">
-                <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
-            <ul class = "gobang-row">
-                <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
-            <ul class = "gobang-row">
-                <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
-            <ul class = "gobang-row">
-                <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"><p></p></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
-            <ul class = "gobang-row">
-                <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
-            <ul class = "gobang-row">
-                <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
-            <ul class = "gobang-row">
-                <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
-            <ul class = "gobang-row">
-                <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
-            <ul class = "gobang-row">
-                <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"><p></p></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"><p></p></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
-            <ul class = "gobang-row">
-                <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
-            <ul class = "gobang-row">
-                <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
-            </ul>
+          
         </div>
     </div>
-
-    <div class = "gobang-black"></div>
-    <div class = "gobang-white"></div>
+    <script src="../node_modules/vue/dist/vue.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
+<!-- <div class = "gobang-white"></div> -->
+<!-- <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li> -->
+<!-- <ul class = "gobang-row">
+    <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul>
+<ul class = "gobang-row">
+    <li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"><p></p></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"><p></p></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul>
+<ul class = "gobang-row">
+<li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul>
+<ul class = "gobang-row">
+<li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul>
+<ul class = "gobang-row">
+<li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul>
+<ul class = "gobang-row">
+<li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"><p></p></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul>
+<ul class = "gobang-row">
+<li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul>
+<ul class = "gobang-row">
+<li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul>
+<ul class = "gobang-row">
+<li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul>
+<ul class = "gobang-row">
+<li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul>
+<ul class = "gobang-row">
+<li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"><p></p></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"><p></p></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul>
+<ul class = "gobang-row">
+<li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul>
+<ul class = "gobang-row">
+<li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li><li class ="gobang-column"></li>
+</ul> -->
